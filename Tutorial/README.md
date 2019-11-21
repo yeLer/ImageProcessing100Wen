@@ -1,274 +1,259 @@
-> 下文中的“终端”一词，在`Windows`系统下指`命令提示符`；在类`Unix`系统下指`terminal`。
+# Q. 61 - 70
+
+## Q.61. 4-邻接的连接数
+
+> [参考](http://ftp.gongkong.com/UploadFile/datum/2008-10/2008101416013500001.pdf)
+>
+> 关于这个我没有找到什么中文资料，只有两个差不多的 PPT 文档。下面的译法参照这个 PPT。
 >
 > ——gzr
 
-# Python Tutorial
+请根据4-邻接的连接数将`renketsu.png`上色。
 
-> 想使用 C++ 的人请点[这里](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Tutorial/README_opencv_c_install.md)。
-
-在这里介绍几个在图像处理中会用到的`NumPy`的使用方法。
-
-`NumPy`是`Python`的一个包（`package`）（就像`C`中的库（`library`）一样），擅长进行矩阵运算。
-
-在图像处理领域，有`OpenCV`这样的库，其中的`API`可以进行各种各样的图像处理。现在，我们将要使用`NumPy`来自己实现`OpenCV`中的功能。
-
-由于`Python`中的`OpenCV`基于`NumPy`，所以可以说使用`NumPy`就等于使用`OpenCV`。
-
-下面的例子不运行`.py`文件，而是直接在终端中运行。
-
-## 环境设定
-
-请使用`Python-3.6`环境（答案也是使用`Python-3.6`）。
-
-### 1. 安装 `Miniconda`
-
-在[这里](https://conda.io/miniconda.html)下载安装 `Miniconda`。使用 Windows 或者 MacOS 都可以。如果已经安装 `Miniconda`，打开终端（在 Windows 下是命令提示符，在 MacOS 下是终端），使用以下命令创建 `conda` 虚拟环境：
+4连接数可以用于显示附近像素的状态。通常，对于所关注像素x0(x，y)不为零的情况，邻域定义如下：
 
 ```bash
-$ conda create python=3.6 -n gasyori100
+x4(x-1,y-1) x3(x,y-1) x2(x+1,y-1)
+x5(x-1,y)   x0(x,y)   x1(x+1,y)
+x6(x-1,y+1) x7(x,y+1) x8(x+1,y+1)
 ```
 
-激活虚拟环境：
+这里，4-邻接的连接数通过以下等式计算：
 
 ```bash
-$ source activate gasyori100
+S = (x1 - x1 x2 x3) + (x3 - x3 x4 x5) + (x5 - x5 x6 x7) + (x7 - x7 x8 x1) 
 ```
 
-如果成功的话，终端会变成这个样子：
+S的取值范围为[0,4]：
+- S = 0： 内部点
+- S = 1：端点
+- S = 2​：连接点
+- S = 3​：分支点
+- S = 4：交叉点
+
+|          输入 (renketsu.png)          |          输出(answers/answer_61.png)           |
+| :-----------------------------------: | :--------------------------------------------: |
+| <img src="renketsu.png" width="50px"> | <img src="answers/answer_61.png" width="50px"> |
+
+答案 >> [answers/answer_61.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_61.py)
+
+## Q.62. 8-邻接的连接数
+
+请根据8-邻接的连接数将`renketsu.png`上色。
+
+这里，8-邻接的连接数通过以下等式计算：
 
 ```bash
-(gasyori100) :~/work_space/Gasyori100knock/ :$ 
+S = (x1 - x1 x2 x3) + (x3 - x3 x4 x5) + (x5 - x5 x6 x7) + (x7 - x7 x8 x1) 
 ```
+において各x¥*の値の0と1を反転させた値を用いる。
 
-### 2. 安装模块
+|          输入 (renketsu.png)          |          输出(answers/answer_62.png)           |
+| :-----------------------------------: | :--------------------------------------------: |
+| <img src="renketsu.png" width="50px"> | <img src="answers/answer_62.png" width="50px"> |
 
-使用以下的指令安装模块：
+答案 >> [answers/answer_62.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_62.py)
+
+## Q.63. 细化处理
+
+将`gazo.png`进行细化处理吧！
+
+细化是将线条宽度设置为1的过程，按照下面的算法进行处理：
+
+1. 从左上角开始进行光栅扫描；
+2. 如果x0(x,y)=0，不处理。如果x0=(x,y)=1，满足下面三个条件时，x0=0：
+   遍历到的像素4近邻像素的取值有一个以上的0；
+   x0的4连接数有1；
+   x0的8近邻像素中有三个以上取值为1。
+3. 重复光栅扫描，直到步骤2中像素值改变次数为0。
+
+用于细化的算法有 Hilditch 算法（问题64），Zhang-Suen 算法（问题65），田村算法等。
+
+| 输入 (gazo.png) | 输出(answers/answer_63.png) |
+| :-------------: | :-------------------------: |
+|  ![](gazo.png)  | ![](answers/answer_63.png)  |
+
+答案 >> [answers/answer_63.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_63.py)
+
+## Q.64. Hilditch 细化算法
+
+
+将`gazo.png`进行 Hilditch 细化算法处理吧！
+
+## Q.65. Zhang-Suen 细化算法
+
+将`gazo.png`进行 Zhang-Suen 细化算法处理吧！
+
+但是，请注意，有必要反转`gazo.png`的值，因为以下所有操作都将0作为线，将1作为背景。
+
+对于关注像素x1(x,y)的8-近邻定义如下：
 
 ```bash
-$ pip install numpy matplotlib opencv-python
+x9 x2 x3
+x8 x1 x4
+x7 x6 x5
 ```
+考虑以下两个步骤：
 
-或者可以用主目录下的 `requirements.txt` 来完成安装：
+ 步骤一：执行光栅扫描并标记满足以下5个条件的所有像素：
+
+1. 这是一个黑色像素；
+2. 顺时针查看x2, x3, ..., x9, x2时，从0到1​的变化次数仅为1​；
+3. x2, x3, ..., x9中1的个数在2个以上6个以下；
+4. x2,x4,x6​中的一个为1​；
+5. x4,x6,x8中的一个为1；
+
+  将标记的像素变为1。
+
+ 步骤二：执行光栅扫描并标记满足以下5个条件的所有像素：
+
+1. 这是一个黑色像素；
+2. 顺时针查看x2, x3, ..., x9, x2时，从0到1的变化次数仅为1；
+3. x2, x3, ..., x9中1的个数在2个以上6个以下；
+4. x2,x4,x8中的一个为1；
+5. x2,x6,x8中的一个为1；
+
+  将标记的像素变为1。
+
+反复执行步骤一和步骤二直到没有点变化（步骤一和步骤二看起来是一样的但是条件4​和条件5​有小小的差别）。
+
+| 输入 (gazo.png) | 输出(answers/answer_65.png) |
+| :-------------: | :-------------------------: |
+|  ![](gazo.png)  | ![](answers/answer_65.png)  |
+
+答案 >> [answers/answer_65.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_65.py)
+
+## Q.66. 方向梯度直方图（HOG）第一步：梯度幅值・梯度方向
+
+求出`imori.jpg`的 HOG 特征量的梯度幅值和梯度方向吧！
+
+HOG（Histogram of Oriented Gradients）是一种表示图像特征量的方法。特征量是表示图像的状态等的向量集合。
+
+在图像识别（图像是什么）和检测（物体在图像中的哪个位置）中，我们需要：
+
+1. 从图像中获取特征量（特征提取）；
+2. 基于特征量识别和检测（识别和检测）。
+
+由于深度学习通过机器学习自动执行特征提取和识别，所以看不到 HOG，但在深度学习变得流行之前，HOG 经常被用作特征量表达。
+
+通过以下算法获得HOG：
+
+1. 图像灰度化之后，在x方向和y方向上求出亮度的梯度：
 
 ```bash
-$ pip install -r requirements.txt
+x方向: gx = I(x+1, y) - I(x-1, y)
+y方向: gy = I(x, y+1) - I(x, y-1)
 ```
-
-### 3. 图像处理教程
-
-将下面的文件保存为 `sample.py`，测试运行，看能不能运行成功。
-
-```python
-import cv2
-
-img = cv2.imread("assets/imori.jpg")
-cv2.imshow("imori", img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
+2. 从gx和gy 确定梯度幅值和梯度方向：
 
 ```bash
-$ python sample.py
+梯度幅值: mag = sqrt(gt ** 2 + gy ** 2)
+梯度方向: ang = arctan(gy / gx)
 ```
-
-如果出现了以下的图像，那么就表示成功啦！按任意的按钮窗口就会消失。
-
-![](assets/sample.png)
-
-如果你不能成功地安装上面的环境，也可以使用 [Google Colaboratory](https://qiita.com/karaage0703/items/e0b57b63dbebed908b2f) 在浏览器上超便捷地运行 Python！
-
-
-接下来，我将解释如何使用 `NumPy` 进行图像处理（已经了解的人可以跳过）。
-
-## 运行 `Python`
-
-在终端上打出`python`。如果成功的话，会出现`>>>`这样的提示符。
+3. 将梯度方向[0,180]进行9等分量化。也就是说，对于[0,20]量化为 index 0，对于[20,40]量化为 index 1。
+4. 将图像划分为N x  N个区域（该区域称为 cell），并作出 cell 内步骤3得到的 index 的直方图。ただし、当表示は 1 でなく勾配角度を求める。
+5. C x  C个 cell 被称为一个 block。对每个 block 内的 cell 的直方图通过下面的式子进行归一化。由于归一化过程中窗口一次移动一个 cell 来完成的，因此一个 cell 会被归一化多次：
 
 ```bash
-(gasyori100) :~/work_space/Gasyori100knock/Tutorial :$ python
-Python 3.6.7 |Anaconda, Inc.| (default, Oct 23 2018, 14:01:38) 
-[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> 
-```
-## `import`
-
-现在，我们导入包。
-
-我们将`OpenCV`使用`import cv2`导入；`NumPy`使用 `import numpy as np`导入，其中`np`是别名。
-
-```python
->>> import cv2
->>> import numpy as np
+h(t) = h(t) / sqrt(Sum h(t) + epsilon)
+通常　epsilon=1
 ```
 
-## 读取及显示图像
+以上，求出 HOG 特征值。
 
-读取图像使用`imread()`函数。我们使用以下命令读取`imori.jpg`：
+这一问，我们完成步骤1到3。
+
+为了使示例答案更容易看出效果，`gra`是彩色的。此外，`mag`被归一化至[0,255]。
+
+| 输入 (imori.jpg) | 梯度幅值(answers/answer_66_mag.jpg) | 梯度方向(answers/answer_66_gra.jpg) |
+| :--------------: | :---------------------------------: | :---------------------------------: |
+|  ![](imori.jpg)  |   ![](answers/answer_66_mag.jpg)    |   ![](answers/answer_66_gra.jpg)    |
+
+答案 >> [answers/answer_66.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_66.py)
+
+## Q.67. 方向梯度直方图（HOG）第二步：梯度直方图
+
+在这里完成 HOG 的第4步。
+
+取N=8，8 x  8个像素为一个 cell，将每个 cell 的梯度幅值加到梯度方向的 index 处。
+
+> 我尽力翻译了，我的语文也不太好，上面那句话看不懂的可以看[这里](https://www.jianshu.com/p/395f0582c5f7)的给出的说明：
+>
+> ![jieshi](jieshi.png)
+>
+> ——gzr
+
+解答为按照下面的顺序排列索引对应的直方图：
+```bash
+1 2 3
+4 5 6
+7 8 9
+```
+| 输入 (imori.jpg) |           输出(answers/answer_67.png)           |
+| :--------------: | :---------------------------------------------: |
+|  ![](imori.jpg)  | <img src="answers/answer_67.png" width="400px"> |
+
+答案 >> [answers/answer_67.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_67.py)
+
+## Q.68. 方向梯度直方图（HOG）第三步：直方图归一化
+
+在这里完成 HOG 的第5步。
+
+取C=3，将3 x  3个 cell 看作一个 block，进行直方图归一化：
 
 ```bash
->>> img = cv2.imread("imori.jpg")
+h(t) = h(t) / sqrt(Sum h(t) + epsilon)
+通常　epsilon=1
 ```
 
-在这里我们将图像以`NumPy`的形式保存在变量`img`中。
+在此，我们得到 HOG 特征量。
 
-我们可以使用`img.shape`来获得图像的大小。返回的元组（`touple`）中的三个数依次表示高度、宽度和通道数。例如这个图像高`128px`，宽`128px`，有三个通道（蓝通道、绿通道、红通道）。
+| 输入 (imori.jpg) |           输出(answers/answer_68.png)           |
+| :--------------: | :---------------------------------------------: |
+|  ![](imori.jpg)  | <img src="answers/answer_68.png" width="400px"> |
 
-```bash
->>> img.shape
-(128, 128, 3)
->>>
-```
+答案 >> [answers/answer_68.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_68.py)
 
-使用`img.dtype`来获得图片的类型。`uint8`是一个 8 位无符号整数。图像的`RGB`分量通常用 0 到 255 的 256 个灰度表示。例如，红色像素为 (R,G,B)=(255,0,0) ，白色是 (R,G,B)=(255,255,255) 。如果图像不以这个类型保存的话，图像会变得很奇怪（后面说明）。
+## Q.69. 方向梯度直方图（HOG）第四步：可视化特征量
 
-```bash
->>> img.dtype
-dtype('uint8')
->>>
-```
+在这里我们将得到的特征量可视化。
 
-使用`cv2.imshow()`来显示图像。`cv2.imshow()`的第一个参数是窗口的名字（不写也没有关系），第二个参数是要显示的图像的名称，一定要写。
+如果将特征量叠加在灰度化后的`imori.jpg`上，可以很容易看到（蝾螈的）外形。
 
-`cv2.waitKey(0)`可以让窗口一直显示图像直到按下任意按键（如果你希望了解更多关于这个函数的信息，请自己查找资料）。
+一个好的可视化的方法是这样的，为 cell 内的每个 index 的方向画一条线段，并且值越大，线段越白，值越小，线段越黑。
 
-```bash
->>> cv2.imshow('', img); cv2.waitKey(0)
-102
->>> 
-```
+解答例
 
-![](assets/sample1.png)
+| 输入 (imori.jpg) | 输出(answers/answer_69.jpg) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  | ![](answers/answer_69.jpg)  |
 
+答案 >> [answers/answer_69.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_69.py)
 
-例如，让`img`的类型变更为`float32`的话，可以使用`astype()`：
+## Q.70. 色彩追踪（Color Tracking）
 
-```bash
->>> _img = img.astype(np.float32)
-```
+在 HSV 色彩空间内对`imori.jpg`创建一个只有蓝色部分值为255的图像。
 
-如果用这种类型显示图片，就会变成这样。也就是说，用不恰当的类型显示图片的话图片就会变得奇怪（但是你可以用这种类型保存图片）。所以当你想要操作图像时：
-1. 使用`cv2.imread`读取图像；
-2. 将图像的类型变为浮点型`np.float32`；
-3. 操作图像；
-4. 像素值不满 0 的将值设置为 0 ，像素值超过 255 的将值设置为 255 （超重要）；
-5. 将图像类型变更为`np.uint8`并保存；
+色彩追踪是提取特定颜色的区域的方法。
 
-以上是推荐的操作顺序。第 4 步将在下面的部分“操作像素”介绍。
+然而，由于在 RGB 色彩空间内颜色有256 ^ 3种，因此十分困难（或者说手动提取相当困难），因此进行 HSV 变换。
 
-```bash
->>> cv2.imshow('', _img); cv2.waitKey(0)
-102
->>>
-```
+HSV 变换在问题5中提到过，是将 RGB 变换到色相（Hue）、饱和度（Saturation）、明度（Value）的方法。
 
-![](assets/sample2.png)
+- 饱和度越小越白，饱和度越大颜色越浓烈，0<=S<=1；
 
-## 操作像素
+- 明度数值越高越接近白色，数值越低越接近黑色（0<=V<=1）；
 
-操作图像的方法和`NumPy`几乎是一样的。
+- 色相：将颜色使用0到360度表示，具体色相与数值按下表对应：
 
-例如，操作 x=30,y=20 的像素值时，进行以下的操作。像素值是按 BGR 的顺序排列的。`array()` 表示这个图像是 `NumPy` 格式。也就是说，`OpenCV` 是 `NumPy` 的高层封装。
+  |  红  |  黄  |  绿  | 青色 | 蓝色 | 品红 |  红  |
+  | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+  |  0°  | 60°  | 120° | 180° | 240° | 300° | 360° |
 
-```bash
->>> img[20, 30]
-array([232, 178, 171], dtype=uint8)
->>> 
-```
+也就是说，为了追踪蓝色，可以在进行 HSV 转换后提取其中180<=H<=260的位置，将其变为255。
 
-更进一步，要得到 x=30,y=20 处的 G 分量，可以使用以下代码：
+| 输入 (imori.jpg) | 输出(answers/answer_70.png) |
+| :--------------: | :-------------------------: |
+|  ![](imori.jpg)  | ![](answers/answer_70.png)  |
 
-```bash
->>> img[20, 30, 1]
-178
->>> 
-```
-
-下面开始进入`NumPy`的中心话题。
-
-`NumPy`有一个称为**切片（Slice）**的功能，可以让我们访问从特定的值`v1`到特定的值`v2`之间的所有元素。
-
-例如要查看 y=20, x=[30, 32] 这个范围之内（的像素）时，如果设置为`30:33`可以得到一个矩阵。如果设置`a:b`，可以获得在 a\leq  v < b 范围内的值。顺便说一下，如果设置为`:30`可以获得 [0, 30] 范围内的像素；如果设置为`30:`的话，可以获得 [30,最后] 像素的值。
-
-```bash
->>> img[20, 30:33]
-array([[232, 178, 171],
-[209, 156, 153],
-[134,  85,  77]], dtype=uint8)
->>> 
-```
-
-例如将图片左上角（ x=[0, 50], y = [0, 50] ）设置为黑色，是照下面这样做。`copy()`这个函数在后面介绍。
-
-```bash
->>> img2 = img.copy()
->>> img2[:50, :50] = 0
->>> cv2.imshow("", img2); cv2.waitKey(0)
-0
->>>
-```
-
-![](assets/sample3.png)
-
-在之前的教程中我们提到：
-
-> 像素的值小于 0​ 的时候设置为​ 0​，超过​ 255​ 的时候修改为​ 255​。
-
-现在我对此作出说明。
-
-例如，图像的类型为`float32`，将一部分的`B`分量改为 260​。`uint8`类型的整数范围只能取​ [0,255] ，如果变成`uint8`型的话蝾螈的颜色一部分就会变成黄色的。
-
-**这是因为，如果将 260​ 变为`uint8`型的话，因为 260-256，所以会让`B`的值为 4。**经常会由于这个原因让像素的值变得不正确。所以上面的第四步的操作（限定值的范围在$[0,255]$之间）是必要的。
-
-```bash
->>> img2 = img.copy().astype(np.float32)
->>> img2[60:100, 60:100, 0] = 260
->>> cv2.imshow("imori", img2.astype(np.uint8)); cv2.waitKey(0)
-```
-
-![](assets/sample5.png)
-
-## 拷贝图像
-
-想要将图像拷贝到别的变量的时候使用`copy()`。
-
-```bash
->>> img2 = img.copy()
-```
-
-如果单纯地让`img2 = img`，因为仅仅是保存图片的地址，对`img2`进行的操作也会反映到`img`上。
-
-如果没有特殊用途，**请使用`copy()`拷贝图像**。
-
-## 保存图像
-
-使用`cv2.imwrite()`来保存图像。
-
-例如之前的被保存为名称为`sample.jpg`的图像`img2`，如果返回值为`True`的话，这就说明该图像被保存在同一个文件夹中，文件名为`sample.jpg`。
-
-```bash
->>> cv2.imwrite("sample.jpg", img2)
-True
->>>
-```
-
-## 练习问题
-
-将图像的左半部分的红通道和蓝通道交换。
-
-![](assets/out_practice.jpg)
-
-回答例
-
-```bash
->>> import cv2
->>> img = cv2.imread("imori.jpg")
->>> img3 = img.copy()
->>> H, W, C = img3.shape
->>> img3[:H//2, :W//2] = img3[:H//2, :W//2, (2, 1, 0)]
->>> cv2.imshow('', img3); cv2.waitKey(0)
-102
->>> 
-```
-
-上面就是所有的 Tutorial 了。之后请一个一个地解决问题吧！
+答案 >> [answers/answer_70.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_70.py)
