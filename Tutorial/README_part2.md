@@ -8,9 +8,9 @@
 
 在这里，形态学处理的核`N=1`。
 
-| 输入 (imori.jpg) | 输出(answers/answer_51.jpg) |
+| 输入 (images/imori.jpg) | 输出(answers/answer_51.jpg) |
 | :--------------: | :-------------------------: |
-|  ![](imori.jpg)  | ![](answers/answer_51.jpg)  |
+|  ![](images/imori.jpg)  | ![](answers/answer_51.jpg)  |
 
 答案 >> [answers/answer_51.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_51.py)
 
@@ -24,9 +24,9 @@
 
  样例图片不好突出显示顶帽运算的效果，如果找到了其它适合的图像会在这里作出更正。
 
-| 输入 (imori.jpg) | 大津の二値化(answers/answer_4.jpg) | 输出(answers/answer_52.jpg) |
+| 输入 (images/imori.jpg) | 大津の二値化(answers/answer_4.jpg) | 输出(answers/answer_52.jpg) |
 | :--------------: | :--------------------------------: | :-------------------------: |
-|  ![](imori.jpg)  |     ![](answers/answer_4.jpg)      | ![](answers/answer_52.jpg)  |
+|  ![](images/imori.jpg)  |     ![](answers/answer_4.jpg)      | ![](answers/answer_52.jpg)  |
 
 答案 >> [answers/answer_52.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_52.py)
 
@@ -40,15 +40,15 @@
 
 样例图片不好突出显示黑帽运算的效果，如果找到了其它适合的图像会在这里作出更正。
 
-| 输入 (imori.jpg) | 大津の二値化(answers/answer_4.jpg) | 输出(answers/answer_53.jpg) |
+| 输入 (images/imori.jpg) | 大津の二値化(answers/answer_4.jpg) | 输出(answers/answer_53.jpg) |
 | :--------------: | :--------------------------------: | :-------------------------: |
-|  ![](imori.jpg)  |     ![](answers/answer_4.jpg)      | ![](answers/answer_53.jpg)  |
+|  ![](images/imori.jpg)  |     ![](answers/answer_4.jpg)      | ![](answers/answer_53.jpg)  |
 
 答案 >> [answers/answer_53.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_53.py)
 
 ## Q.54. 使用误差平方和算法（Sum of Squared Difference）进行模式匹配（Template Matching）
 
-在这里我们使用误差平方和进行模式匹配。将`imoripart.jpg`在`imori.jpg`中匹配的图像使用红框框出来。
+在这里我们使用误差平方和进行模式匹配。将`imoripart.jpg`在`images/imori.jpg`中匹配的图像使用红框框出来。
 
 模式匹配，即寻找待匹配图像和全体图像中最相似的部分，用于物体检测任务。现在虽然使用卷积神经网络（`CNN`）来检测物体，但是模式识别仍然是最基本的处理方法。
 
@@ -73,15 +73,15 @@ S = Sum_{x=0:w, y=0:h} (I(i+x, j+y) - T(x, y) )^2
 >
 > ——gzr
 
-| 输入 (imori.jpg) | template图像(imori_part.jpg) | 输出(answers/answer_54.jpg) |
+| 输入 (images/imori.jpg) | template图像(images/imori_part.jpg) | 输出(answers/answer_54.jpg) |
 | :--------------: | :--------------------------: | :-------------------------: |
-|  ![](imori.jpg)  |     ![](imori_part.jpg)      | ![](answers/answer_54.jpg)  |
+|  ![](images/imori.jpg)  |     ![](images/imori_part.jpg)      | ![](answers/answer_54.jpg)  |
 
 答案 >> [answers/answer_54.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_54.py)
 
 ## Q.55. 使用绝对值差和（Sum of Absolute Differences）进行模式匹配
 
-在这里我们使用绝对值差和进行模式匹配。将`imoripart.jpg`在`imori.jpg`中匹配的图像使用红框框出来。
+在这里我们使用绝对值差和进行模式匹配。将`imoripart.jpg`在`images/imori.jpg`中匹配的图像使用红框框出来。
 
 绝对值差和（Sum of Absolute Differences）计算像素值差的绝对值之和，选取S**最小**的位置作为匹配。
 
@@ -89,15 +89,15 @@ S = Sum_{x=0:w, y=0:h} (I(i+x, j+y) - T(x, y) )^2
 S = Sum_{x=0:w, y=0:h} |I(i+x, j+y) - T(x, y)|
 ```
 
-| 输入 (imori.jpg) | template图像(imori_part.jpg) | 输出(answers/answer_55.jpg) |
+| 输入 (images/imori.jpg) | template图像(images/imori_part.jpg) | 输出(answers/answer_55.jpg) |
 | :--------------: | :--------------------------: | :-------------------------: |
-|  ![](imori.jpg)  |     ![](imori_part.jpg)      | ![](answers/answer_55.jpg)  |
+|  ![](images/imori.jpg)  |     ![](images/imori_part.jpg)      | ![](answers/answer_55.jpg)  |
 
 答案 >> [answers/answer_55.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_55.py)
 
 ## Q.56. 使用归一化交叉相关（Normalization Cross Correlation）进行模式匹配
 
-在这里我们使用归一化交叉相关进行模式匹配。将`imoripart.jpg`在`imori.jpg`中匹配的图像使用红框框出来。
+在这里我们使用归一化交叉相关进行模式匹配。将`imoripart.jpg`在`images/imori.jpg`中匹配的图像使用红框框出来。
 
 归一化交叉相关（Normalization Cross Correlation）求出两个图像的相似度，匹配S**最大**处的图像：
 
@@ -113,15 +113,15 @@ S最后的范围在-1<=S<=1。`NCC`对变化十分敏感。
 >
 > ——gzr
 
-| 输入 (imori.jpg) | template图像(imori_part.jpg) | 输出(answers/answer_56.jpg) |
+| 输入 (images/imori.jpg) | template图像(images/imori_part.jpg) | 输出(answers/answer_56.jpg) |
 | :--------------: | :--------------------------: | :-------------------------: |
-|  ![](imori.jpg)  |     ![](imori_part.jpg)      | ![](answers/answer_56.jpg)  |
+|  ![](images/imori.jpg)  |     ![](images/imori_part.jpg)      | ![](answers/answer_56.jpg)  |
 
 答案 >> [answers/answer_56.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_56.py)
 
 ## Q.57. 使用零均值归一化交叉相关（Zero-mean Normalization Cross Correlation）进行模式匹配
 
-在这里我们使用零均值归一化交叉相关进行模式匹配。将`imoripart.jpg`在`imori.jpg`中匹配的图像使用红框框出来。
+在这里我们使用零均值归一化交叉相关进行模式匹配。将`imoripart.jpg`在`images/imori.jpg`中匹配的图像使用红框框出来。
 
 零均值归一化交叉相关（Zero-mean Normalization Cross Correlation）求出两个图像的相似度，匹配S最大处的图像。
 
@@ -135,15 +135,15 @@ S = ----------------------------------------------------------------------------
 
 S最后的范围在-1<=S<=1。零均值归一化积相关去掉平均值的话就是归一化交叉相关，据说这比归一化交叉相关对变换更加敏感（但是这里匹配失败了）。
 
-| 输入 (imori.jpg) | template图像(imori_part.jpg) | 输出(answers/answer_57.jpg) |
+| 输入 (images/imori.jpg) | template图像(images/imori_part.jpg) | 输出(answers/answer_57.jpg) |
 | :--------------: | :--------------------------: | :-------------------------: |
-|  ![](imori.jpg)  |     ![](imori_part.jpg)      | ![](answers/answer_57.jpg)  |
+|  ![](images/imori.jpg)  |     ![](images/imori_part.jpg)      | ![](answers/answer_57.jpg)  |
 
 答案 >> [answers/answer_57.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_57.py)
 
 ## Q.58. 4邻接连通域标记
 
-将`seg.png`进行4邻接连通域标记吧。
+将`images/seg.png`进行4邻接连通域标记吧。
 
 连通域标记（Connected Component Labeling）是将邻接的像素打上相同的标记的作业。
 
@@ -183,9 +183,9 @@ Lookup Table是这样的：
 
 像这样的话，邻接像素就可以打上同样的标签了。因为这里是做4邻接连通域标记，所以我们只用考察上方像素和左边像素。
 
-| 输入 (seg.png) | 输出(answers/answer_58.png) |
+| 输入 (images/seg.png) | 输出(answers/answer_58.png) |
 | :------------: | :-------------------------: |
-|  ![](seg.png)  | ![](answers/answer_58.png)  |
+|  ![](images/seg.png)  | ![](answers/answer_58.png)  |
 
 答案 >> [answers/answer_58.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_58.py)
 
@@ -195,15 +195,15 @@ Lookup Table是这样的：
 
 要进行8邻接连通域标记，我们需要考察`i(x-1,y-1)`，`i(x, y-1)`，`i(x+1,y-1)`，`i(x-1,y)`这4个像素。
 
-| 输入 (seg.png) | 输出(answers/answer_59.png) |
+| 输入 (images/seg.png) | 输出(answers/answer_59.png) |
 | :------------: | :-------------------------: |
-|  ![](seg.png)  | ![](answers/answer_59.png)  |
+|  ![](images/seg.png)  | ![](answers/answer_59.png)  |
 
 答案 >> [answers/answer_59.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_59.py)
 
 ## Q.60. 透明混合（Alpha Blending）
 
-将`imori.jpg`和`thorino.jpg`按照6:4的比例透明混合吧。
+将`images/imori.jpg`和`images/thorino.jpg`按照6:4的比例透明混合吧。
 
 透明混合即通过设定透明度（Alpha值）来设定图像透明度的方法。在 OpenCV 中虽然没有透明度这个参数，但在PIL等库中有。在这里我们手动设定透明度。
 
@@ -216,9 +216,9 @@ alpha = 0.5
 out = img1 * alpha + img2 * (1 - alpha)
 ```
 
-| 输入 (imori.jpg) | 输入2 (thorino.jpg) | 输出(answers/answer_60.jpg) |
+| 输入 (images/imori.jpg) | 输入2 (images/thorino.jpg) | 输出(answers/answer_60.jpg) |
 | :--------------: | :-----------------: | :-------------------------: |
-|  ![](imori.jpg)  |  ![](thorino.jpg)   | ![](answers/answer_60.jpg)  |
+|  ![](images/imori.jpg)  |  ![](images/thorino.jpg)   | ![](answers/answer_60.jpg)  |
 
 答案 >> [answers/answer_60.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_51_60/answers/answer_60.py)
 
@@ -232,7 +232,7 @@ out = img1 * alpha + img2 * (1 - alpha)
 >
 > ——gzr
 
-请根据4-邻接的连接数将`renketsu.png`上色。
+请根据4-邻接的连接数将`images/renketsu.png`上色。
 
 4连接数可以用于显示附近像素的状态。通常，对于所关注像素x0(x，y)不为零的情况，邻域定义如下：
 
@@ -255,15 +255,15 @@ S的取值范围为[0,4]：
 - S = 3​：分支点
 - S = 4：交叉点
 
-|          输入 (renketsu.png)          |          输出(answers/answer_61.png)           |
+|          输入 (images/renketsu.png)          |          输出(answers/answer_61.png)           |
 | :-----------------------------------: | :--------------------------------------------: |
-| <img src="renketsu.png" width="50px"> | <img src="answers/answer_61.png" width="50px"> |
+| <img src="images/renketsu.png" width="50px"> | <img src="answers/answer_61.png" width="50px"> |
 
 答案 >> [answers/answer_61.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_61.py)
 
 ## Q.62. 8-邻接的连接数
 
-请根据8-邻接的连接数将`renketsu.png`上色。
+请根据8-邻接的连接数将`images/renketsu.png`上色。
 
 这里，8-邻接的连接数通过以下等式计算：
 
@@ -272,15 +272,15 @@ S = (x1 - x1 x2 x3) + (x3 - x3 x4 x5) + (x5 - x5 x6 x7) + (x7 - x7 x8 x1)
 ```
 において各x¥*の値の0と1を反転させた値を用いる。
 
-|          输入 (renketsu.png)          |          输出(answers/answer_62.png)           |
+|          输入 (images/renketsu.png)          |          输出(answers/answer_62.png)           |
 | :-----------------------------------: | :--------------------------------------------: |
-| <img src="renketsu.png" width="50px"> | <img src="answers/answer_62.png" width="50px"> |
+| <img src="images/renketsu.png" width="50px"> | <img src="answers/answer_62.png" width="50px"> |
 
 答案 >> [answers/answer_62.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_62.py)
 
 ## Q.63. 细化处理
 
-将`gazo.png`进行细化处理吧！
+将`images/gazo.png`进行细化处理吧！
 
 细化是将线条宽度设置为1的过程，按照下面的算法进行处理：
 
@@ -293,22 +293,22 @@ S = (x1 - x1 x2 x3) + (x3 - x3 x4 x5) + (x5 - x5 x6 x7) + (x7 - x7 x8 x1)
 
 用于细化的算法有 Hilditch 算法（问题64），Zhang-Suen 算法（问题65），田村算法等。
 
-| 输入 (gazo.png) | 输出(answers/answer_63.png) |
+| 输入 (images/gazo.png) | 输出(answers/answer_63.png) |
 | :-------------: | :-------------------------: |
-|  ![](gazo.png)  | ![](answers/answer_63.png)  |
+|  ![](images/gazo.png)  | ![](answers/answer_63.png)  |
 
 答案 >> [answers/answer_63.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_63.py)
 
 ## Q.64. Hilditch 细化算法
 
 
-将`gazo.png`进行 Hilditch 细化算法处理吧！
+将`images/gazo.png`进行 Hilditch 细化算法处理吧！
 
 ## Q.65. Zhang-Suen 细化算法
 
-将`gazo.png`进行 Zhang-Suen 细化算法处理吧！
+将`images/gazo.png`进行 Zhang-Suen 细化算法处理吧！
 
-但是，请注意，有必要反转`gazo.png`的值，因为以下所有操作都将0作为线，将1作为背景。
+但是，请注意，有必要反转`images/gazo.png`的值，因为以下所有操作都将0作为线，将1作为背景。
 
 对于关注像素x1(x,y)的8-近邻定义如下：
 
@@ -341,15 +341,15 @@ x7 x6 x5
 
 反复执行步骤一和步骤二直到没有点变化（步骤一和步骤二看起来是一样的但是条件4​和条件5​有小小的差别）。
 
-| 输入 (gazo.png) | 输出(answers/answer_65.png) |
+| 输入 (images/gazo.png) | 输出(answers/answer_65.png) |
 | :-------------: | :-------------------------: |
-|  ![](gazo.png)  | ![](answers/answer_65.png)  |
+|  ![](images/gazo.png)  | ![](answers/answer_65.png)  |
 
 答案 >> [answers/answer_65.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_65.py)
 
 ## Q.66. 方向梯度直方图（HOG）第一步：梯度幅值・梯度方向
 
-求出`imori.jpg`的 HOG 特征量的梯度幅值和梯度方向吧！
+求出`images/imori.jpg`的 HOG 特征量的梯度幅值和梯度方向吧！
 
 HOG（Histogram of Oriented Gradients）是一种表示图像特征量的方法。特征量是表示图像的状态等的向量集合。
 
@@ -389,9 +389,9 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 
 为了使示例答案更容易看出效果，`gra`是彩色的。此外，`mag`被归一化至[0,255]。
 
-| 输入 (imori.jpg) | 梯度幅值(answers/answer_66_mag.jpg) | 梯度方向(answers/answer_66_gra.jpg) |
+| 输入 (images/imori.jpg) | 梯度幅值(answers/answer_66_mag.jpg) | 梯度方向(answers/answer_66_gra.jpg) |
 | :--------------: | :---------------------------------: | :---------------------------------: |
-|  ![](imori.jpg)  |   ![](answers/answer_66_mag.jpg)    |   ![](answers/answer_66_gra.jpg)    |
+|  ![](images/imori.jpg)  |   ![](answers/answer_66_mag.jpg)    |   ![](answers/answer_66_gra.jpg)    |
 
 答案 >> [answers/answer_66.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_66.py)
 
@@ -403,7 +403,7 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 
 > 我尽力翻译了，我的语文也不太好，上面那句话看不懂的可以看[这里](https://www.jianshu.com/p/395f0582c5f7)的给出的说明：
 >
-> ![jieshi](jieshi.png)
+> ![jieshi](images/jieshi.png)
 >
 > ——gzr
 
@@ -413,9 +413,9 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 4 5 6
 7 8 9
 ```
-| 输入 (imori.jpg) |           输出(answers/answer_67.png)           |
+| 输入 (images/imori.jpg) |           输出(answers/answer_67.png)           |
 | :--------------: | :---------------------------------------------: |
-|  ![](imori.jpg)  | <img src="answers/answer_67.png" width="400px"> |
+|  ![](images/imori.jpg)  | <img src="answers/answer_67.png" width="400px"> |
 
 答案 >> [answers/answer_67.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_67.py)
 
@@ -432,9 +432,9 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 
 在此，我们得到 HOG 特征量。
 
-| 输入 (imori.jpg) |           输出(answers/answer_68.png)           |
+| 输入 (images/imori.jpg) |           输出(answers/answer_68.png)           |
 | :--------------: | :---------------------------------------------: |
-|  ![](imori.jpg)  | <img src="answers/answer_68.png" width="400px"> |
+|  ![](images/imori.jpg)  | <img src="answers/answer_68.png" width="400px"> |
 
 答案 >> [answers/answer_68.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_68.py)
 
@@ -442,21 +442,21 @@ h(t) = h(t) / sqrt(Sum h(t) + epsilon)
 
 在这里我们将得到的特征量可视化。
 
-如果将特征量叠加在灰度化后的`imori.jpg`上，可以很容易看到（蝾螈的）外形。
+如果将特征量叠加在灰度化后的`images/imori.jpg`上，可以很容易看到（蝾螈的）外形。
 
 一个好的可视化的方法是这样的，为 cell 内的每个 index 的方向画一条线段，并且值越大，线段越白，值越小，线段越黑。
 
 解答例
 
-| 输入 (imori.jpg) | 输出(answers/answer_69.jpg) |
+| 输入 (images/imori.jpg) | 输出(answers/answer_69.jpg) |
 | :--------------: | :-------------------------: |
-|  ![](imori.jpg)  | ![](answers/answer_69.jpg)  |
+|  ![](images/imori.jpg)  | ![](answers/answer_69.jpg)  |
 
 答案 >> [answers/answer_69.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_69.py)
 
 ## Q.70. 色彩追踪（Color Tracking）
 
-在 HSV 色彩空间内对`imori.jpg`创建一个只有蓝色部分值为255的图像。
+在 HSV 色彩空间内对`images/imori.jpg`创建一个只有蓝色部分值为255的图像。
 
 色彩追踪是提取特定颜色的区域的方法。
 
@@ -476,9 +476,9 @@ HSV 变换在问题5中提到过，是将 RGB 变换到色相（Hue）、饱和�
 
 也就是说，为了追踪蓝色，可以在进行 HSV 转换后提取其中180<=H<=260的位置，将其变为255。
 
-| 输入 (imori.jpg) | 输出(answers/answer_70.png) |
+| 输入 (images/imori.jpg) | 输出(answers/answer_70.png) |
 | :--------------: | :-------------------------: |
-|  ![](imori.jpg)  | ![](answers/answer_70.png)  |
+|  ![](images/imori.jpg)  | ![](answers/answer_70.png)  |
 
 答案 >> [answers/answer_70.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_61_70/answers/answer_70.py)
 
@@ -486,7 +486,7 @@ HSV 变换在问题5中提到过，是将 RGB 变换到色相（Hue）、饱和�
 
 ## Q.71. 掩膜（Masking）
 
-使用`HSV`对`imori.jpg`进行掩膜处理，只让蓝色的地方变黑。
+使用`HSV`对`images/imori.jpg`进行掩膜处理，只让蓝色的地方变黑。
 
 像这样通过使用黑白二值图像将对应于黑色部分的原始图像的像素改变为黑色的操作被称为掩膜。
 
@@ -494,9 +494,9 @@ HSV 变换在问题5中提到过，是将 RGB 变换到色相（Hue）、饱和�
 
 这使得可以在某种程度上将蝾螈（从背景上）分离出来。
 
-| 输入 (imori.jpg) | マスク(answers/answer_70.png) | 输出(answers/answer_71.jpg) |
+| 输入 (images/imori.jpg) | マスク(answers/answer_70.png) | 输出(answers/answer_71.jpg) |
 | :--------------: | :---------------------------: | :-------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_70.png)   | ![](answers/answer_71.jpg)  |
+|  ![](images/imori.jpg)  |  ![](answers/answer_70.png)   | ![](answers/answer_71.jpg)  |
 
 答案 >> [answers/answer_71.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_71.py)
 
@@ -506,21 +506,21 @@ HSV 变换在问题5中提到过，是将 RGB 变换到色相（Hue）、饱和�
 
 因此，可以通过对掩膜图像应用`N = 5`闭运算（问题50）和开运算（问题49），以使掩膜图像准确。
 
-| 输入 (imori.jpg) | マスク(answers/answer_72_mask.png) | 输出(answers/answer_72.jpg) |
+| 输入 (images/imori.jpg) | マスク(answers/answer_72_mask.png) | 输出(answers/answer_72.jpg) |
 | :--------------: | :--------------------------------: | :-------------------------: |
-|  ![](imori.jpg)  |  ![](answers/answer_72_mask.png)   | ![](answers/answer_72.jpg)  |
+|  ![](images/imori.jpg)  |  ![](answers/answer_72_mask.png)   | ![](answers/answer_72.jpg)  |
 
 答案 >> [answers/answer_72.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_72.py)
 
 ## Q.73. 缩小和放大
 
-将`imori.jpg`进行灰度化处理之后，先缩小至原来的0.5倍，再放大两倍吧。这样做的话，会得到模糊的图像。
+将`images/imori.jpg`进行灰度化处理之后，先缩小至原来的0.5倍，再放大两倍吧。这样做的话，会得到模糊的图像。
 
 放大缩小的时候使用双线性插值。如果将双线性插值方法编写成函数的话，编程会变得简洁一些。
 
-| 输入 (imori.jpg) | 输出(answers/answer_73.jpg) |
+| 输入 (images/imori.jpg) | 输出(answers/answer_73.jpg) |
 | :--------------: | :-------------------------: |
-|  ![](imori.jpg)  | ![](answers/answer_73.jpg)  |
+|  ![](images/imori.jpg)  | ![](answers/answer_73.jpg)  |
 
 答案 >> [answers/answer_73.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_73.py)
 
@@ -530,9 +530,9 @@ HSV 变换在问题5中提到过，是将 RGB 变换到色相（Hue）、饱和�
 
 ここで求めた图像はエッジとなっている。つまり、图像中の高周波成分をとったことになる。
 
-| 输入 (imori.jpg) | 输出(answers/answer_74.jpg) |
+| 输入 (images/imori.jpg) | 输出(answers/answer_74.jpg) |
 | :--------------: | :-------------------------: |
-|  ![](imori.jpg)  | ![](answers/answer_74.jpg)  |
+|  ![](images/imori.jpg)  | ![](answers/answer_74.jpg)  |
 
 答案 >> [answers/answer_74.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_74.py)
 
@@ -544,9 +544,9 @@ HSV 变换在问题5中提到过，是将 RGB 变换到色相（Hue）、饱和�
 
 这种高斯金字塔的方法现在仍然有效。高斯金字塔的方法也用于提高图像清晰度的超分辨率成像（Super-Resolution ）深度学习方法。
 
-| 输入 (imori.jpg) | 1/1(answers/answer_75_1.jpg) |             1/2              |             1/4              |             1/8              |             1/16              |             1/32              |
+| 输入 (images/imori.jpg) | 1/1(answers/answer_75_1.jpg) |             1/2              |             1/4              |             1/8              |             1/16              |             1/32              |
 | :--------------: | :--------------------------: | :--------------------------: | :--------------------------: | :--------------------------: | :---------------------------: | :---------------------------: |
-|  ![](imori.jpg)  | ![](answers/answer_75_1.jpg) | ![](answers/answer_75_2.jpg) | ![](answers/answer_75_4.jpg) | ![](answers/answer_75_8.jpg) | ![](answers/answer_75_16.jpg) | ![](answers/answer_75_32.jpg) |
+|  ![](images/imori.jpg)  | ![](answers/answer_75_1.jpg) | ![](answers/answer_75_2.jpg) | ![](answers/answer_75_4.jpg) | ![](answers/answer_75_8.jpg) | ![](answers/answer_75_16.jpg) | ![](answers/answer_75_32.jpg) |
 
 答案 >> [answers/answer_75.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_75.py)
 
@@ -570,9 +570,9 @@ HSV 变换在问题5中提到过，是将 RGB 变换到色相（Hue）、饱和�
 
 解答例( (0,1), (0,3), (0,5), (1,4), (2,3), (3,5) を使用)
 
-| 输入 (imori.jpg) | 输出(answers/answer_76.jpg) |
+| 输入 (images/imori.jpg) | 输出(answers/answer_76.jpg) |
 | :--------------: | :-------------------------: |
-|  ![](imori.jpg)  | ![](answers/answer_76.jpg)  |
+|  ![](images/imori.jpg)  | ![](answers/answer_76.jpg)  |
 
 答案 >> [answers/answer_76.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_76.py)
 
@@ -624,7 +624,7 @@ Gabor 滤波器可以通过这里的方法简单实现。
 
 ## Q.79. 使用 Gabor 滤波器进行边缘检测
 
-将`imori.jpg`灰度化之后，分别使用A=0, 45, 90, 135的 Gabor 滤波器进行滤波。其它参数取为：K=11, s=1.5, g=1.2, l=3, p=0。
+将`images/imori.jpg`灰度化之后，分别使用A=0, 45, 90, 135的 Gabor 滤波器进行滤波。其它参数取为：K=11, s=1.5, g=1.2, l=3, p=0。
 
 如在答案示例看到的那样， Gabor滤波器提取了指定的方向上的边缘。因此，Gabor 滤波器在边缘特征提取方面非常出色。
 
@@ -632,9 +632,9 @@ Gabor 滤波器可以通过这里的方法简单实现。
 
 一般认为深度学习的卷积层接近 Gabor 滤波器的功能。然而，在深度学习中，滤波器的系数通过机器学习自动确定。作为机器学习的结果，据说将发生类似于 Gabor 滤波器的过程。
 
-| 输入 (imori.jpg) | 输出(answers/answer_79.png) |
+| 输入 (images/imori.jpg) | 输出(answers/answer_79.png) |
 | :--------------: | :-------------------------: |
-|  ![](imori.jpg)  | ![](answers/answer_79.png)  |
+|  ![](images/imori.jpg)  | ![](answers/answer_79.png)  |
 
 答案 >> [answers/answer_79.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_79.py)
 
@@ -646,9 +646,9 @@ Gabor 滤波器可以通过这里的方法简单实现。
 
 深度学习中的卷积神经网络，最初已经具有提取图像的特征的功能，在不断重复特征提取的计算过程中，自动提取图像的特征。
 
-| 输入 (imori.jpg) | 输出(answers/answer_80.jpg) |
+| 输入 (images/imori.jpg) | 输出(answers/answer_80.jpg) |
 | :--------------: | :-------------------------: |
-|  ![](imori.jpg)  | ![](answers/answer_80.jpg)  |
+|  ![](images/imori.jpg)  | ![](answers/answer_80.jpg)  |
 
 答案 >> [answers/answer_80.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_71_80/answers/answer_80.py)
 
@@ -656,7 +656,7 @@ Gabor 滤波器可以通过这里的方法简单实现。
 
 ## Q.81. Hessian 角点检测
 
-对`thorino.jpg`进行Hessian 角点检测吧！
+对`images/thorino.jpg`进行Hessian 角点检测吧！
 
 角点检测是检测边缘上的角点。
 
@@ -677,15 +677,15 @@ H = [ Ix^2  IxIy]
 
 解答ではdet(H)が極大点かつ、max(H)*0.1以上である点をコーナーとしている。
 
-| 输入 (thorino.jpg) | 输出(answers/answer_81.jpg) |
+| 输入 (images/thorino.jpg) | 输出(answers/answer_81.jpg) |
 | :----------------: | :-------------------------: |
-|  ![](thorino.jpg)  | ![](answers/answer_81.jpg)  |
+|  ![](images/thorino.jpg)  | ![](answers/answer_81.jpg)  |
 
 答案 >> [answers/answer_81.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_81.py)
 
 ## Q.82. Harris 角点检测第一步：Sobel + Gausian
 
-问题82和问题83对`thorino.jpg`进行 Harris 角点检测吧！
+问题82和问题83对`images/thorino.jpg`进行 Harris 角点检测吧！
 
 Harris 角点检测算法如下：
 
@@ -706,9 +706,9 @@ H = [ Ix^2  IxIy]
 
 在这里我们完成步骤1到步骤3。
 
-| 输入 (thorino.jpg) | 输出(answers/answer_82.png) |
+| 输入 (images/thorino.jpg) | 输出(answers/answer_82.png) |
 | :----------------: | :-------------------------: |
-|  ![](thorino.jpg)  | ![](answers/answer_82.png)  |
+|  ![](images/thorino.jpg)  | ![](answers/answer_82.png)  |
 
 答案 >> [answers/answer_82.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_82.py)
 
@@ -718,9 +718,9 @@ H = [ Ix^2  IxIy]
 
 在步骤4​中，k = 0.04​；在步骤5​中th = 0.1​。
 
-| 输入 (thorino.jpg) | 输出(answers/answer_83.jpg) |
+| 输入 (images/thorino.jpg) | 输出(answers/answer_83.jpg) |
 | :----------------: | :-------------------------: |
-|  ![](thorino.jpg)  | ![](answers/answer_83.jpg)  |
+|  ![](images/thorino.jpg)  | ![](answers/answer_83.jpg)  |
 
 答案 >> [answers/answer_83.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_81_90/answers/answer_83.py)
 
@@ -920,7 +920,7 @@ train_madara_5.jpg  Pred: 0
 
 ## Q.91. 利用 k-平均聚类算法进行减色处理第一步----按颜色距离分类
 
-对`imori.jpg`利用 k-平均聚类算法进行减色处理。
+对`images/imori.jpg`利用 k-平均聚类算法进行减色处理。
 
 在问题6中涉及到了减色处理，但是问题6中事先确定了要减少的颜色。这里，k-平均聚类算法用于动态确定要减少的颜色。
 
@@ -955,9 +955,9 @@ train_madara_5.jpg  Pred: 0
 最初に選ばれた色との色の距離でクラスのインデックスをつけたもの(アルゴリズム2)。
 解答では0-4にインデックスの値をx50にして見やすいようにしている。
 
-| 输入 (imori.jpg) | 输出(answers/answer_91.jpg) |
+| 输入 (images/imori.jpg) | 输出(answers/answer_91.jpg) |
 | :--------------: | :-------------------------: |
-|  ![](imori.jpg)  | ![](answers/answer_91.jpg)  |
+|  ![](images/imori.jpg)  | ![](answers/answer_91.jpg)  |
 
 答案 >> [answers/answer_91.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_91.py)
 
@@ -976,11 +976,11 @@ train_madara_5.jpg  Pred: 0
 
 减色处理可以将图像处理成手绘风格。如果k=10，则可以在保持一些颜色的同时将图片处理成手绘风格。
 
-现在，k=5的情况下试着将`madara.jpg`进行减色处理。
+现在，k=5的情况下试着将`images/madara.jpg`进行减色处理。
 
-| 输入 (imori.jpg) | 输出(answers/answer_92.jpg) | k=10(answers/answer_92_k10.jpg) | 输入2 (madara.jpg) | 输出(answers/answer_92_m.jpg) |
+| 输入 (images/imori.jpg) | 输出(answers/answer_92.jpg) | k=10(answers/answer_92_k10.jpg) | 输入2 (images/madara.jpg) | 输出(answers/answer_92_m.jpg) |
 | :--------------: | :-------------------------: | :-----------------------------: | :----------------: | :---------------------------: |
-|  ![](imori.jpg)  | ![](answers/answer_92.jpg)  | ![](answers/answer_92_k10.jpg)  |  ![](madara.jpg)   | ![](answers/answer_92_m.jpg)  |
+|  ![](images/imori.jpg)  | ![](answers/answer_92.jpg)  | ![](answers/answer_92_k10.jpg)  |  ![](images/madara.jpg)   | ![](answers/answer_92_m.jpg)  |
 
 答案 >> [answers/answer_92.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_92.py)
 
@@ -1029,9 +1029,9 @@ b = np.array((60, 60, 170, 160), dtype=np.float32)
 
 答案中，标注 1 的矩形用红色画出，标注 0 的矩形用蓝色的线画出，Ground-truth 用绿色的线画出。在这里我们简单地准备蝾螈头部和头部以外的图像。
 
-| 输入 (imori_1.jpg) | 输出(answers/answer_94.jpg) |
+| 输入 (images/imori_1.jpg) | 输出(answers/answer_94.jpg) |
 | :----------------: | :-------------------------: |
-|  ![](imori_1.jpg)  | ![](answers/answer_94.jpg)  |
+|  ![](images/imori_1.jpg)  | ![](answers/answer_94.jpg)  |
 
 答案 >> [answers/answer_94.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_94.py)
 
@@ -1197,9 +1197,9 @@ recs = np.array(((42, 42), (56, 56), (70, 70)), dtype=np.float32)
 [ 97.          81.         167.         144.           0.70371708]]
 ```
 
-| 输入 (imori_many.jpg) | 输出(answers/answer_98.jpg) |
+| 输入 (images/imori_many.jpg) | 输出(answers/answer_98.jpg) |
 | :-------------------: | :-------------------------: |
-|  ![](imori_many.jpg)  | ![](answers/answer_98.jpg)  |
+|  ![](images/imori_many.jpg)  | ![](answers/answer_98.jpg)  |
 
 解答 >> [answers/answer_98.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_98.py)
 
@@ -1219,9 +1219,9 @@ NMS 是一种留下高分 Bounding-box 的方法，算法如下：
 
 不管准确度如何，这样就完成了图像检测的一系列流程。通过增加神经网络，可以进一步提高检测精度。
 
-| 输入 (imori_many.jpg) | NMS前(answers/answer_98.jpg) | NMS後(answers/answer_99.jpg) |
+| 输入 (images/imori_many.jpg) | NMS前(answers/answer_98.jpg) | NMS後(answers/answer_99.jpg) |
 | :-------------------: | :--------------------------: | :--------------------------: |
-|  ![](imori_many.jpg)  |  ![](answers/answer_98.jpg)  |  ![](answers/answer_99.jpg)  |
+|  ![](images/imori_many.jpg)  |  ![](answers/answer_98.jpg)  |  ![](answers/answer_99.jpg)  |
 
 解答 >> [answers/answer_99.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_99.py)
 
@@ -1295,9 +1295,9 @@ F-score >>  0.4
 mAP >> 0.0625
 ```
 
-| 输入 (imori_many.jpg) | GT(answers/answer_100_gt.jpg)  | 输出(answers/answer_100.jpg) |
+| 输入 (images/imori_many.jpg) | GT(answers/answer_100_gt.jpg)  | 输出(answers/answer_100.jpg) |
 | :-------------------: | :----------------------------: | :--------------------------: |
-|  ![](imori_many.jpg)  | ![](answers/answer_100_gt.jpg) | ![](answers/answer_100.jpg)  |
+|  ![](images/imori_many.jpg)  | ![](answers/answer_100_gt.jpg) | ![](answers/answer_100.jpg)  |
 
 解答 >> [answers/answer_100.py](https://github.com/yoyoyo-yo/Gasyori100knock/blob/master/Question_91_100/answers/answer_100.py)
 
