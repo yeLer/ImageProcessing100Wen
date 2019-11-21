@@ -1,7 +1,7 @@
 import cv2
 from scipy.ndimage import imread
 from matplotlib import pyplot as plt
-img = imread(r'D:\repository4github\ImageProcessing100Wen\Tutorial\images\imori.jpg','L')
+img = imread(r'D:\repository4github\ImageProcessing100Wen\Tutorial\images\seg.png','L')
 # img = imread('../Tutorial/images/imori.jpg', 'L')
 hist = cv2.calcHist([img], [0], None, [2], [0, 256])
 peakind1 = hist[0]
