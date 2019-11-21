@@ -157,6 +157,7 @@ python answers/answer_@@.py
 |  98  |     简单物体检测第二步----滑动窗口（Sliding Window）+ NN     |[✓](https://github.com/yeLer/ImageProcessing100Wen/tree/master/Question_91_100/answers/answer_98.py)||
 |  99  | 简单物体检测第三步----非极大值抑制（Non-Maximum Suppression） |[✓](https://github.com/yeLer/ImageProcessing100Wen/tree/master/Question_91_100/answers/answer_99.py)||
 | 100  |  简单物体检测第三步----评估 Precision, Recall, F-score, mAP  |[✓](https://github.com/yeLer/ImageProcessing100Wen/tree/master/Question_11_20/answers/answer_100.py)||
+| 101  |  利用直方图判断图像的像素种类情况  |[✓](https://github.com/yeLer/ImageProcessing100Wen/tree/master/Question_101_110/answers/answer_101.py)||
 
 ## TODO
 
